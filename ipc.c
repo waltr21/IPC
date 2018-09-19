@@ -1,5 +1,12 @@
 #include<stdio.h>
 #include<signal.h>
+#include <time.h>
+#include <sys/resource.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <unistd.h>
+
 
 //#define SIGUSR1 8
 //#define SIGUSR2 9
@@ -27,8 +34,8 @@ int main() {
 	}
 	// child
 	else {
-	Random rand = new Random();
-	int num = rand.Next(1, 11);
+	srand(time(NULL));
+	int num = rand() % 7;
 	if(num > 5) {
 		num = num - 5;
 		sleep(num);
