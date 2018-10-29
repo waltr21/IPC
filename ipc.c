@@ -8,6 +8,7 @@
 #include<sys/wait.h>
 
 
+
 void sigHandler(int);
 
 int main() {
@@ -39,6 +40,7 @@ int main() {
 	
 	int num = (rand() % 10) + 1;
 	
+
 	if(num > 5) {
 		num = num - 5;
 		sleep(num);
